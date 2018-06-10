@@ -1,0 +1,6 @@
+.idea/
+vendor/
+composer.lock
+phpunit.xml
+tests/Fixtures/doctrine.sqlite
+tests/Fixtures/pdo.sqlite

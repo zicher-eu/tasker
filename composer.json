@@ -1,0 +1,36 @@
+{
+  "name": "zicher/tasker",
+  "description": "Tasker - queue.",
+  "homepage": "https://github.com/zicher-eu/tasker",
+  "keywords": [
+    "tasker",
+    "queue"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tomasz Kotlarek",
+      "email": "tomasz.kotlarek@zicher.eu"
+    }
+  ],
+  "type": "library",
+  "require": {
+    "php": ">=7.1"
+  },
+  "require-dev": {
+    "doctrine/doctrine-bundle": "^1.8",
+    "doctrine/orm": "^2.6",
+    "symfony/framework-bundle": "^4.0",
+    "phpunit/phpunit": "^6.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Zicher\\Tasker\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Fixture\\": "tests/Fixtures/"
+    }
+  }
+}
