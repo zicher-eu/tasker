@@ -67,7 +67,7 @@ class DoctrineProcessTaskTest extends TestCase
         $this->assertEquals(null, $task);
 
         $task = new Task('test:command');
-        self::$manager->push($task);
+        self::$manager->push($task, 'default', ['noflush' => false]);
         $this->assertEquals(Task::QUEUED, $task->getStatus());
 
         $start = microtime(true);
