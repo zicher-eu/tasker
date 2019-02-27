@@ -78,11 +78,10 @@ class DoctrineManager implements ManagerInterface
 
     /**
      * @param Task $task
-     * @param string $queue
      * @param array $options
      * @return ManagerInterface
      */
-    public function push(Task $task, string $queue = 'default', array $options = []): ManagerInterface
+    public function push(Task $task, array $options = []): ManagerInterface
     {
         $class = $this->class;
 

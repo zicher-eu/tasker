@@ -55,13 +55,12 @@ class Manager
 
     /**
      * @param Task $task
-     * @param string $queue
      * @param array $options
      * @return Manager
      */
-    public function push(Task $task, string $queue = 'default', array $options = []): self
+    public function push(Task $task, array $options = []): self
     {
-        $this->manager->push($task->markQueued(), $queue, $options);
+        $this->manager->push($task->markQueued(), $options);
 
         return $this;
     }

@@ -99,7 +99,7 @@ class PdoManager implements ManagerInterface
      * @param array $options
      * @return ManagerInterface
      */
-    public function push(Task $task, string $queue = 'default', array $options = []): ManagerInterface
+    public function push(Task $task, array $options = []): ManagerInterface
     {
         $statement = $this->driver->getInsertStatement();
 
