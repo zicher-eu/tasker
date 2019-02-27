@@ -79,9 +79,10 @@ class DoctrineManager implements ManagerInterface
     /**
      * @param Task $task
      * @param string $queue
+     * @param array $options
      * @return ManagerInterface
      */
-    public function push(Task $task, string $queue = 'default'): ManagerInterface
+    public function push(Task $task, string $queue = 'default', array $options = []): ManagerInterface
     {
         $class = $this->class;
 
@@ -95,7 +96,10 @@ class DoctrineManager implements ManagerInterface
             ->setRunAt($task->getRunAt());
 
         $this->entityManager->persist($taskEntity);
-        $this->entityManager->flush();
+
+        if (false === (array_key_exists('noflush', $options) && true === $options['noflush'])) {
+            $this->entityManager->flush();
+        }
 
         return $this;
     }
